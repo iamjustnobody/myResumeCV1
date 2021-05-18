@@ -1,0 +1,779 @@
+@import url();
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    outline: none; border:none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+a{text-decoration: none;}
+ul li{list-style: none;}
+body{
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg,#ff9a9e 10%,#f6416c 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*overflow: hidden;/*back-drop*/
+    /*padding: 5.5rem;*/
+    /*animation: hue 10s infinite alternate;*/
+}
+/*
+body::after,body::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    /*z-index: -1;
+}
+body::before{
+    clip-path: circle(30% at left 20%);
+    background: linear-gradient(135deg,#f6416c 10%,#ff9a9e 100%);
+}
+body::after{
+    clip-path: circle(25% at right 85%); /*of min-height of body: 100vh
+    background: linear-gradient(135deg,#f6416c 10%,#ff9a9e 100%);
+}
+*/
+/*
+.container{
+    background: white;
+    min-height: 85vh;
+    width: 35rem;
+    width: 70%;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+    background-color: white;
+    border-radius: 2rem;
+    
+    position: relative; /*its like z-index>=0 color covers body:before&after; otherwise under body:b4after*/
+    /*z-index:0 /*z-index>=0 makes container covers body:b4after; other vals or no z-index makes container under body:b4after*/
+    /*any z-index val makes containerb4after above container; under container only if no z-index defined
+    backdrop-filter: blur(2rem); 
+    /*equals to position:relative + specifying z-index: >=0; so position relative & z-index above can be removed;
+    /*even if then set z-index<0 - makes bodyb4after under container but container still sits above containerb4after
+}
+.container::before,.container::after{
+    content: '';
+    background: white;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.5),rgba(255,255,255,0.1));
+    background-color: red;
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    z-index: -2;
+    border-radius: 50%;
+}
+.container::before{
+    top:-10%;
+    right:-5%
+}
+.container::after{
+    background: linear-gradient(to left top, rgba(255,255,255,0.6),rgba(255,255,255,0.1));
+    background-color: red;
+    bottom:-10%;
+    left:-7%
+}
+*/
+/*
+.container{
+    background: white;
+    min-height: 85vh;
+    width: 70%;
+    /*max-width: 1000px; min-height:100px;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.6),rgba(255,255,255,0.1));
+    border-radius: 2rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+    box-shadow:0 1rem 2rem rgba(0,0,0,.3);
+    box-shadow:0 35px 55px rgba(0,0,0,.3);
+    padding: 0;
+
+    /*backdrop-filter: blur(100rem);/*makes container above bodyb4after & circle 1&2
+    /*z-index:0 /*same effect as z-index<0 for body afterb4
+    /*position: relative; /*sam eeffect as z-index>=0 making container above bodyb4after &circ 1&2
+}
+/*.container .resume{backdrop-filter: blur(10rem)} 
+/*resumedrop with container backdrop makes container above bodyb4 & circle 1&2; w/o container drop just resume drop -> all4 pseudo el appears 
+.circle1,.circle2{
+    content: '';
+    background: white;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.5),rgba(255,255,255,0.1));
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    z-index: -2;
+    border-radius: 50%;
+}
+.circle1{ /*background-color: red;
+    top:1%;
+    right:7%;
+}
+.circle2{
+    background: linear-gradient(to left top, rgba(255,255,255,0.6),rgba(255,255,255,0.1));
+    bottom:3%;
+    left:9%;
+    height: 7rem;
+    width: 7rem;
+}
+*/
+/*
+.circle1::before,.circle2::before{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}*/
+/*
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    /*position: relative; opt if we want relative position here
+    margin:50px;/*to body; or body.padding
+    min-height:1000px;/*opt if 1000px claimed in .resume; or claimed here then in .resume min-height:100%
+    justify-content: space-between; /*now instroducing theme toggler
+    align-items:flex-start;/*now instroducing theme toggler
+}
+.container .resume{
+    background: red;
+    /*height:100%; /*only this -> not effects -> need below actual val
+    min-height:85vh;/* if(!bg) affecting container opacy (or bodyb4after opac);bg & height85vh need set border-radius 2rem;
+   min-height:1000px;
+    /*width: 100%; /*now introducing theme toggler
+    margin:0; /*100% w
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.container .theme{ border:2px solid green;
+    margin-left:20px;
+}*/
+
+body::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(20rem);
+    z-index: -11;
+    transform: scale(1.15);
+} /*for wallpaper*/
+.container{ /*border:2px solid green;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%; /*why OT width 100% background white not 100% (here border ==bg in OT)?? - bg (OT) or border here should fully filled/ extend*/
+    /*width: 100%; /*?coz although it should be set as 80%ish, even if set as 100%, the width is limited by max-width*/
+    max-width: 1000px;
+    margin:50px;            width:100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+.container .resume{ /*border:2px solid red;*/
+    min-height:1000px;
+    width: 100%; /*w 100% for colum flex; flex:2 for row flex;*/
+    display: flex; /*opt flex 1:2 left:right*/
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: relative;
+}
+.container .resume, .container .theme{
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.3),rgba(255,255,255,0.1));
+    border-radius: 2rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+    box-shadow:0 1rem 2rem rgba(0,0,0,.3);
+    box-shadow:0 35px 55px rgba(0,0,0,.3);
+}
+.container .theme{ /*border:2px solid blue;*/
+    /*margin-left:30px; for row flex*/
+    margin-bottom:30px; 
+    /*text-align:center not working*/
+    display: flex;
+    align-items: center; /*for span if span directly inside theme (no div in between); 
+    /*or .container .theme div (div completely overlap w span); 
+    /*opt if theme div span (div & span hav gap inbetween);centralise div but theme bar too small & div expanded (span margins)*/
+    /*justify-content: space-between;opt as ther's margin  0.7rem 0.9rem*/
+}
+/*.container .theme div {border:2px solid blue;
+    display: flex;
+    align-items: center;
+    /*align center for span inside; margin: 0.7rem 0.9rem; 
+    /*can centrilise el but if el size too small then meet margin-top so position top/start
+    justify-content: center; 
+
+    position: relative;
+    overflow: hidden; /*overflow hidden by div NOt by span if theres margin/gap inbetwwen
+}/*for theme div span & div and span have margin 0.7rem 0.9rem in between (not overlap)*/
+/*.container .theme div span{border:2px solid blue;*/
+.container .theme div{/*border:2px solid blue;/*div completely overlap w span*/
+    display: inline-block;
+    height: 1.7rem;
+    width: 1.7rem;
+    border-radius: 50%;
+    cursor:pointer;
+    margin: 0.7rem 0.9rem;
+    box-shadow: 0 0 0 .5rem rgba(255,255,255,.2),0 1rem 2rem rgba(0,0,0,.4);
+    /*border:1px solid rgba(255,255,255,.4);border-right: 1px solid rgba(255,255,255,.2);border-bottom: 1px solid rgba(255,255,255,.2);
+    /*already border-radius 50%
+    box-shadow: 0 5px 45px rgba(0,0,0,0.1);*/
+
+    position: relative;/*div completely overlap w span; no margin/gap around*/
+    overflow: hidden;
+}
+.container .theme div span{width: 100%; height: 100%;margin:0;padding: 0;text-align: center; /*all opt*/
+    display:inline-block /*to display span style bgPic without words between span tags; when above div overlap span completely */
+}
+.container .theme div:before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255,255,255,.5);
+    transform:skewX(45deg) translateX(50px);
+    transition: 0.5s
+}
+.container .theme div:hover:before{
+    transform:skewX(45deg) translateX(-50px)
+}
+
+.resume .left-panel{
+    /*background-color: yellowgreen;*/
+    /*flex:1;/*opt display grid*/
+    background: linear-gradient(to right bottom,rgba(255,255,255,0.2),rgba(255,255,255,.1));
+    border-radius: 2rem;
+    padding: 40px;
+}
+
+
+.resume .right-dashboard{
+    /*flex:2;/*opt display grid*/
+    padding: 40px;
+}
+
+
+@keyframes hue {
+    from{
+        filter: hue-rotate(0);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+.resume .bgp{
+    z-index: -1;
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 250px; /*210height + 40padding*/
+    width: 30%; /*1fr of 3fr*/
+    overflow: hidden;
+}
+.resume .bgp img{object-fit: cover;}
+
+
+.left-panel .profileTxt{
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    height:210px;/*14.5%;*/
+    /*padding-bottom: 10px;*/
+
+    /*background: url('./images/pink.png');*/
+}
+.left-panel .profileTxt h3{
+    font-weight: lighter;
+}
+.left-panel .profileTxt .name{margin:18px auto}
+.left-panel .profileTxt .name span{
+    font-size:25px
+}
+.left-panel .profileTxt .post span{
+    font-weight: bold;
+}
+
+.left-panel .contact-info{
+    padding-top:40px
+}
+
+.left-panel .contact-info .title{
+    text-transform: uppercase;
+    font-weight:600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.left-panel .contact-info ul li{
+    list-style: none;
+    list-style-type: none;
+    margin:10px 0;
+    /*cursor: pointer;*/
+    /*display: inline-flex; /*sorted height issue but losing .icon width
+    /*height: auto; or specific val*/
+    /*display: flex; justify-content: flex-start;width: 100%;*/
+    display: grid;
+    grid-template-columns: 30px 1fr;
+}
+.left-panel .contact-info span{
+    /*border:1px solid red*/
+}
+.left-panel .contact-info ul li .icon{ border:2px solid green;
+    display: inline-block;
+    width: 30px;
+    font-size: 18px;
+    color:#03a9f4;
+    /*height: 100%*/
+    
+}
+.left-panel .contact-info.social ul li .icon{width: 70px;}
+.left-panel .contact-info.social ul li{grid-template-columns: 70px 1fr;}
+
+
+.left-panel .contact-info ul li span{
+    font-weight: 300;
+    height:30px
+}
+.left-panel .contact-info ul li .text{ border:2px solid green;
+    /*height: 150px;*/
+    width: calc(100%-30px);
+    /*text-transform: lowercase;*/
+}
+.left-panel .contact-info ul li .text.lower{
+    text-transform: lowercase;
+}
+
+
+.left-panel .contact-info.education li{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.left-panel .contact-info.education h5{
+    color:#03a9f4;
+    font-weight: 500;
+}
+.left-panel .contact-info.education h4:nth-child(2){
+    font-weight: bold;
+}
+.left-panel .contact-info.education h4{
+    font-weight: 300;
+}
+.left-panel .contact-info.education ul li h4.location{
+    font-size:13px;
+}
+
+
+.left-panel .contact-info.language li{border:none;
+    display: flex;
+    flex-direction: column;
+}
+.left-panel .contact-info.language .percentage{ border:none;
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #081921;
+    display: block;
+    margin-top:5px;
+}
+.left-panel .contact-info.language .percentage div{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    background: #03a9f4;
+}
+
+
+.left-panel .social .network{
+    color:#fff;
+    margin-bottom: 3px;
+}
+/*.left-panel .social a{border:2px solid yellow;}
+.left-panel .social i{border:2px solid yellow;}*/
+.left-panel .social .icon{ /*border:2px solid green;*/
+    /*text-align: center;
+    display: flex;
+    align-items: center;*/
+    /*padding:3px;*/
+    /*padding: 0;/*opt*/
+    /*above -> prevly div incl i (no a inbetween)*/
+   /* display: block;
+    box-sizing: border-box;
+    background: #f1f1f1;
+    width: 30px;
+    height:30px;
+    /*30px 60px
+    border-radius: 50%;
+    margin-right:20px
+    /*width fixed by display grid (prevly 30px) & white bgc has no margin to text if no div to incl a i 
+    /*a has margin 10px to div to away from text;div & text no gap close to each other
+    /* a & i need padding/margin inbetween (a i not completely covered/overlap)*/
+    /*background: #f1f1f1;*/
+    width: 100%;/*i.e.70px;*/
+    height:100%;/*auto;*/
+
+}
+/*now div.icon->a->i.fa*/
+.left-panel .social .icon a{
+    display: block;
+    box-sizing: border-box;
+    background: #f1f1f1;
+    width: 45px;
+    height: 45px;
+    /*margin:10px;*/
+    border-radius: 50%;
+    /*padding: 6px;*/
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    background: linear-gradient(0deg,#ddd,#fff);
+    transition: .5s;
+
+    /*display: flex;justify-content: center;align-items: center;/*for i but i has w=100 h=100 below*/
+}
+.left-panel .social .text{/*border:2px solid green;*/
+    /*text-transform: lowercase; /*not working if placed here*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /*making .icon a width longer than .icon a span; without the above, .icon a span width == .icon s width*/
+}
+/*.left-panel .social .text p{text-transform: lowercase;}*/
+.left-panel .social .icon :hover{
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+.left-panel .social .icon a i{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ff0;
+    background: linear-gradient(0deg,#fff,#ddd);
+    border-radius: 50%;
+    /*line-height: calc(40px-12px);*/
+    font-size:24px;
+    display: flex;justify-content: center;align-items: center; /*replace a's padding 6px & i's line-weight*/
+    color:#262626;
+}
+.left-panel .social ul li:nth-child(1) .icon a:hover i{
+    color:#61dbfb;
+}
+.left-panel .social ul li:nth-child(2) .icon a:hover i{
+    color:#4078c0;
+}
+.left-panel .social ul li:nth-child(3) .icon a:hover i{
+    color:#3b5998
+}
+.left-panel .social ul li:nth-child(4) .icon a:hover i{
+    color:#007bb6
+}
+.left-panel .social ul li:nth-child(5) .icon a:hover i{
+    color:#00aced
+}
+.left-panel .social .text .network,.left-panel .social .text p{
+    /*border:2px solid red;*/
+    /*grid makes them close to each other n occupy 100% width individually*/
+}
+/*above 2 .left-panel .social .text p not existed (border red & lowercase); now replaced by a span for hover effect below*/
+.left-panel .social .text a{/*border:2px solid yellow;*/
+    position: relative;
+    flex:1;/*height: 35px;*/
+    display: flex;
+    align-items: center;
+}
+.left-panel .social .text a:hover{color:#fff}
+.left-panel .social .text a:before{
+    content:"";
+    position: absolute;
+    width: 0;
+    height:100%;
+    top:0;
+    left:0;
+    background: url('./images/btn-bg1.png');
+    background-size: cover;
+    transform-origin: left;
+    transition: 0.5s;
+}
+.left-panel .social .text a:hover:before{width:100%}
+
+.left-panel .social .text a span{
+    position:relative; 
+    /*z-index:15; /*opt*/
+    font-size:13px;
+    /*height:130px; /*set below in .social ul li*/
+    /*border:2px solid red;*/
+    text-transform: lowercase;
+    height:100%;/*35px;/*need to set height in ul li (70px) then in a first (flex 2); now then a span*/
+    /*width: 100%; opt*/
+    display: flex;
+    align-items: center; /*or padding-top:5px ish*/
+}
+.left-panel .social .text.portfolio-web a span{
+    font-size:12px;
+}
+.left-panel .social ul li{height:70px}
+
+
+/*.left-panel .contact-info.interests .hobby-wrapper{display: flex;} /*nowrap*/
+.left-panel .contact-info.interests .hobby-wrapper .hobby-btn{ /*border:2px solid yellow;*/
+    display: inline-block;
+    height:40px;
+    width:40px;
+    float: left;
+    margin:5px 5px;/*margin: 0 5px;*/
+    background:#fff;
+    border-radius: 50px;
+    cursor:pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,.1);
+    transition: all .3s ease-out;
+    overflow: hidden;
+}
+.left-panel .contact-info.interests .hobby-wrapper .hobby-btn:nth-child(1){margin-left:0}
+.left-panel .contact-info.interests .hobby-wrapper .hobby-btn .hobby-icon{ /*border:2px solid red;*/
+    display: inline-block;
+    height:40px;
+    width:40px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 40px;
+    text-align: center;
+}
+.left-panel .contact-info.interests .hobby-wrapper .hobby-btn .hobby-icon i{
+    font-size: 25px;
+    line-height: 40px;
+}
+.left-panel .contact-info.interests .hobby-wrapper .hobby-btn span{/* border:2px solid red;*/
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-left:8px;
+    /*height: 100%;
+    /*width: 100%;/*based on hovered btn display flex -> may squeeze icon*/
+}
+.left-panel .contact-info.interests .hobby-wrapper .hobby-btn:hover{
+    /*width:150px;/*190px;*/
+    /*flex:1; /*too wide sometimes*/
+    width:150px;
+    display: flex;
+    align-items: center;/*may squeeze icon*/
+    /*vertically centralising span*/
+}
+/*.left-panel .contact-info.interests .hobby-wrapper .hobby-btn:nth-child(2):hover{flex:1;or width:190px;}*/
+.left-panel .contact-info.interests .hobby-wrapper .hobby-btn:nth-child(3):hover{width:160px;}
+.left-panel .contact-info.interests .hobby-wrapper .hobby-btn:nth-child(2):hover{width:190px;}
+.left-panel .contact-info.interests .hobby-wrapper .hobby-btn:nth-child(1):hover .hobby-icon{
+    background:green;
+    color:#fff
+}
+.left-panel .contact-info.interests .hobby-wrapper .hobby-btn:nth-child(2):hover .hobby-icon{
+    background:#333;
+    color:#fff
+}
+
+
+
+
+
+
+.right-dashboard .about{ /*border:2px solid red;*/
+    margin-bottom: 50px;
+}
+.right-dashboard .about:last-child{
+    margin-bottom: 0;
+}
+.right-dashboard .about .title2{ /*border:2px solid red;*/
+    color:#003147;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.right-dashboard .about .statement{
+    font-size: 15px;
+}
+.right-dashboard .about p{
+    color:#333;
+}
+
+.right-dashboard .about .opex-box{
+    display: flex;/*border:2px solid green;*/
+    flex-direction: row;
+    margin: 20px 0;
+    /*display: grid;
+    grid-template-columns: 150px 1fr;/*fixed width opt; or flex 1 2 min-width*/
+}
+.right-dashboard .about .opex-box .year-company{
+    min-width: 150px;
+    flex:1;
+    padding-right: 3px;margin-right:3px;
+}
+.right-dashboard .about .opex-box .text{flex:3}
+.right-dashboard .about .opex-box .year-company h5{
+    text-transform: uppercase;
+    color:#848c90;
+    font-weight: 600;
+    font-size: 10px;
+}
+.right-dashboard .about .opex-box .text h4{ /*border:2px solid red;*/
+    text-transform: uppercase;
+    color:#2a7da2;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.right-dashboard .about .opex-box .text p{ /*border:2px solid red;*/
+    font-size: 13.5px;
+}
+
+.right-dashboard .skills .opex-box{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.right-dashboard .skills .opex-box h4{
+    text-transform: uppercase;
+    color:#848c99;
+    font-weight: 500;
+}
+.right-dashboard .skills .opex-box .percentage{
+    width: 100%;
+    height: 10px;
+    background: #f0f0f0;
+    position: relative;
+}
+.right-dashboard .skills .opex-box .percentage div{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    background: #03a9f4;
+}
+
+
+.right-dashboard .about .opex-box2{ /*border:2px solid red;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 20px 0;
+}
+.right-dashboard .about .opex-box2 .text{
+    padding-left:40px;
+    font-size: 14.5px;
+}
+.right-dashboard .about .opex-box2 .project-name{
+    margin-bottom: 12px;
+}
+.right-dashboard .about .opex-box2.last{/*border:2px solid yellowgreen;*/
+    margin: 20px 0;
+}
+.right-dashboard .about .opex-box2 .text p{
+    position: relative;
+    margin-bottom: 8px;
+}
+.right-dashboard .about .opex-box2 .text p:before{
+    content: '';
+    position: absolute;
+    top:5px;
+    left:-25px;
+    width:6px;
+    height:6px;
+    border-radius: 50%;;
+    border:2px solid rgba(79,146,79,.993);
+}
+.right-dashboard .about .opex-box2 .text p:after{
+    content: '';
+    position: absolute;
+    top:14px;
+    left:-21px;
+    width:2px;
+    height:50%;
+    background: rgba(79,146,79,.993);
+}
+
+
+@media (max-width:1000px)
+{
+    .container{
+        margin:35px;
+    }
+    .container .resume {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .left-panel .contact-info ul li{
+        grid-template-columns: 30px 240px;
+    } /*applies to contact; social still using non-media display grid 70px 1fr*/
+    .left-panel .contact-info.social ul li{
+        grid-template-columns: 70px 320px;
+    } /*applies to contact*/
+    
+}
+@media (max-width:600px){
+    .left-panel,.right-dashboard{width: 100%;}
+    .container{margin: 0;}
+    .right-dashboard .about .opex-box{
+        flex-direction: column;
+    }
+    .about .opex-box .year-company{
+        margin-bottom:5px
+    }
+    .right-dashboard .about.skills .opex-box{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (max-width:490px){
+    .container .theme{display: block;}
+    .left-panel .contact-info ul li{
+        display: flex;
+        flex-direction: column;
+    } /*works on 0755,gmail.com,kingdom;chinese,english*/
+    .left-panel .contact-info.social ul li{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    /*.left-panel .social .text{margin-bottom: 40px;}*/
+    .left-panel .contact-info.social ul li .icon{
+        margin-bottom: 5px;
+    }
+   /* .left-panel .contact-info ul li:nth-child(1) span{width: 200px;}
+    .left-panel .contact-info ul li:nth-child(2) span{width: 240px;}
+    .left-panel .contact-info ul li:nth-child(3) span{width: 240px;}*/
+
+    /*todo: if not set width as below, alternatively could hover contact not 100% w; hover social will hover 100%h*/
+    #mobile{width: 150px;}
+    #email{width: 250px;}
+    #address{width: 240px;}
+    #web{max-width:270px}
+    #github,#linkedin,#fb,#twitter{width: 180px;}
+}
+
+@media (max-width:382px){
+    .hobby-wrapper{display: flex; flex-direction: column; /*flex-start;*/}
+    /*.hobby-wrapper .hobby-btn{margin-left: 0;}*/
+    .left-panel .contact-info.interests .hobby-wrapper .hobby-btn{margin-left: 0;}
+}
+@media (max-width:371px){
+    #web{max-width:170px}
+}
+@media (max-width:350px){ /*338px*/
+    .container .resume .left-panel,.container .resume .right-dashboard{padding:10px}
+}
+@media (max-width:309px)
+{#email{max-width: auto;}
+#address{max-width: auto}}
+@media (max-width:299px){ 
+    .container .resume .left-panel,.container .resume .right-dashboard{padding:1px}
+    #email{width: 240px;}
+    #address{width: 230px;}
+}
