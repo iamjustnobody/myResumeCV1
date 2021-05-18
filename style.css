@@ -14,6 +14,7 @@ body{
     min-height: 100vh;
     width: 100%;
     background: linear-gradient(135deg,#ff9a9e 10%,#f6416c 100%);
+    background: lightblue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,6 +197,8 @@ body::after{
     box-shadow:0 1rem 2rem rgba(0,0,0,.3);
     box-shadow:0 35px 55px rgba(0,0,0,.3);
 }
+.container .resume{ border-radius: 0rem;}
+
 .container .theme{ /*border:2px solid blue;*/
     /*margin-left:30px; for row flex*/
     margin-bottom:30px; 
@@ -254,7 +257,9 @@ body::after{
     /*background-color: yellowgreen;*/
     /*flex:1;/*opt display grid*/
     background: linear-gradient(to right bottom,rgba(255,255,255,0.2),rgba(255,255,255,.1));
+    background: #003147;
     border-radius: 2rem;
+    border-radius: 0;
     padding: 40px;
 }
 
@@ -293,6 +298,7 @@ body::after{
     /*padding-bottom: 10px;*/
 
     /*background: url('./images/pink.png');*/
+    color: #f0f0f0;
 }
 .left-panel .profileTxt h3{
     font-weight: lighter;
@@ -314,6 +320,7 @@ body::after{
     font-weight:600;
     letter-spacing: 1px;
     margin-bottom: 20px;
+    color:#f0f0f0
 }
 .left-panel .contact-info ul li{
     list-style: none;
@@ -349,6 +356,7 @@ body::after{
     /*height: 150px;*/
     width: calc(100%-30px);
     /*text-transform: lowercase;*/
+    color:#f0f0f0
 }
 .left-panel .contact-info ul li .text.lower{
     text-transform: lowercase;
@@ -370,6 +378,7 @@ body::after{
 }
 .left-panel .contact-info.education h4{
     font-weight: 300;
+    color:#f0f0f0
 }
 .left-panel .contact-info.education ul li h4.location{
     font-size:13px;
@@ -492,6 +501,7 @@ body::after{
     align-items: center;
 }
 .left-panel .social .text a:hover{color:#fff}
+.left-panel .social .text a:hover span{color:#fff}
 .left-panel .social .text a:before{
     content:"";
     position: absolute;
@@ -499,7 +509,7 @@ body::after{
     height:100%;
     top:0;
     left:0;
-    background: url('./images/btn-bg1.png');
+    background: url('./images/btn-bg2.png');
     background-size: cover;
     transform-origin: left;
     transition: 0.5s;
@@ -517,6 +527,8 @@ body::after{
     /*width: 100%; opt*/
     display: flex;
     align-items: center; /*or padding-top:5px ish*/
+
+    color:#03a9f4;
 }
 .left-panel .social .text.portfolio-web a span{
     font-size:12px;
@@ -672,6 +684,7 @@ body::after{
 }
 .right-dashboard .about .opex-box2 .project-name{
     margin-bottom: 12px;
+    color:#2a7da2;
 }
 .right-dashboard .about .opex-box2.last{/*border:2px solid yellowgreen;*/
     margin: 20px 0;
