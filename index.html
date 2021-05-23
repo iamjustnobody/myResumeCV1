@@ -13,6 +13,10 @@
 </head>
 <body>
     <main class="container">
+        <audio controls id='my-audio'>
+            <source src="./audio/4204758801.mp3" type="audio/mpeg" id='my-audio-src'>
+          Your browser does not support the audio element.
+          </audio>
         <div class="theme">
             <div><span style="background:lightblue;"></span></div>
             <div><span style='background:linear-gradient(135deg,#ff9a9e 10%,#f6416c 100%);'></span></div>
@@ -92,21 +96,23 @@
                             <div class="icon"><a href="#"><i class="fa fa-globe" aria-hidden="true"></i></a></div>
                             <div class="text portfolio-web">
                                 <div class='network'>My Portfolio Website</div>
-                                <a href="#" id='web'><span> https://myportfolio-react@firebaseapp.com</span></a>
+                                <a href="https://myportfolio-react@firebaseapp.com" id='web' target="_blank">
+                                    <span> https://myportfolio-react@firebaseapp.com</span>
+                                </a>
                             </div>
                         </li>
                         <li>
                             <div class='icon'><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></div>
                             <div class="text">
                                 <div class='network'>Github</div>
-                                <a href="#" id='github'><span>iamjustnobody@github</span></a>
+                                <a href="https://github.com/iamjustnobody" id='github'><span>iamjustnobody@github</span></a>
                             </div>
                         </li>
                         <li>
                             <div class='icon'><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
                             <div class="text">
                                 <div class='network'>Facebook</div>
-                                <a href="#" id='fb'><span>xiaxinwu@facebook</span></a>
+                                <a href="https://www.facebook.com/xiaxin.wu/" id='fb'><span>xiaxinwu@facebook</span></a>
                             </div>
                         </li>
                         <li>
@@ -117,14 +123,14 @@
                                 <a href="#" id='linkedin'><span>xiaxinwu@LinkedIn</span></a>
                             </div>
                         </li>
-                        <li>
+                        <!--<li>
                             <div class="icon"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
                             <div class="text">
                                 <div class='network'>Twitter</div>
-                                <!--<p>xiaxinwu@twitter</p>-->
+                                <--<p>xiaxinwu@twitter</p>
                                 <a href="#" id='twitter'><span>xiaxinwu@twitter</span></a>
                             </div>
-                        </li>
+                        </li>-->
                         <!--<li>
                             <a href="#" class='icon'><i class="fa fa-pinterest-square" aria-hidden="true"></i></a>
                             <div class="text">
@@ -226,8 +232,8 @@
                         </div>
                         <div class='text'>
                             <h4>Fuel Route Safety Case and Control & Instrumentation Engineer</h4>
-                            <p>I am currently looking for a senior branding or marketing management role within the e-commerce sector 
-                                where I can maintain my strong track record and deliver similar results.</p>
+                            <p>Led major update on DNB Worker Risk Assessment and supported several minor updates in Probability Safety Analysis</p>
+                            <p>Led Ageing & Obsolescence Reviews on fuel route C&I Systems and Fuelling Machine Modelling in support of plant system replacement or upgrade</p>
                         </div>
                     </div>
                     <div class='opex-box'>
@@ -237,8 +243,8 @@
                         </div>
                         <div class='text'>
                             <h4>Graduate Electrical and Control & Instrumentation Engineer</h4>
-                            <p>I am currently looking for a senior branding or marketing management role within the e-commerce sector 
-                                where I can maintain my strong track record and deliver similar results.</p>
+                            <p>Review of Control Rod Drop Time Trend after prolonged dwell time</p>
+                            <p>Verification of Technical Spec of Linear Variable Differential Transformer Replacement</p>
                         </div>
                     </div>
                 </div>
@@ -247,40 +253,45 @@
                     <h2 class='title2'> Personal Projects</h2>
                     <div class='opex-box2'>
                         <div class='project-name'>
-                            <h4>Around Web</h4>
+                            <h4 id='project1'>Around Web</h4>
+                            <a href='https://github.com/iamjustnobody/around-web'><i class="fa fa-github" aria-hidden="true"></i></a>
                         </div>
                         <div class='text'>
                             <p class="fn1">Built a geo-based social network web application with React JS.</p>
-                            <p class="fn2">Implemented basic token based registration / login / logout flow with React Router v4 and server-side user authentication with JWT.</p>
-                            <p class="fn3">Implemented features such as "Create Post", "Nearby Posts As Gallery" and "Nearby Posts In Map" with Ant Design, GeoLocation API and Google Map API.</p>
+                            <p class="fn2">Implemented basic token based registration / login / logout flow 
+                                with React Router v4 and server-side user authentication with JWT.</p>
+                            <p class="fn3">Implemented features such as "Create Post", "Nearby Posts As Gallery" and "Nearby Posts In Map" 
+                                with Ant Design, GeoLocation API and Google Map API.</p>
                         </div>
                     </div>
                     <div class='opex-box2'>
                         <div class='project-name'>
-                            <h4>Event Recommendation</h4>
+                            <h4 id='project2'>Event Recommendation</h4>
+                            <a href='https://github.com/iamjustnobody/Event_Manager'><i class="fa fa-github" aria-hidden="true"></i></a>
                         </div>
                         <div class='text'>
                             <p>Created Java servlets with RESTful APIs to handle HTTP requests and responses</p>
                             <p>Built relational database (MySQL) to capture real business data from Ticketmaster API</p>
-                            <p>Developed an interactive web page for users to search events and purchase tickets (HTML, CSS and JavaScript, AJAX)</p>
-                            <p>Researched multiple recommendation algorithms (e.g., content-based recommendation) and implemented personalized business recommendation based on search history and favorite records</p>
+                            <p>Developed an interactive web page for users to search events 
+                                and purchase tickets (HTML, CSS and JavaScript, AJAX)</p>
+                            <p>Researched multiple recommendation algorithms (e.g., content-based recommendation) 
+                                and implemented personalized business recommendation based on search history and favorite records</p>
                         </div>
                     </div>
                     <div class='opex-box2 last'>
                         <div class='project-name'>
-                            <h4>Twitter Clone</h4>
+                            <h4 id='project3'>Twitter Clone</h4>
+                            <a href='https://github.com/iamjustnobody/mini-twitter'><i class="fa fa-github" aria-hidden="true"></i></a>
                         </div>
                         <div class='text'>
-                            <p class='fn1'>Created a social network site just like Twitter complete with features of tweets / likes / comments / retweets /pin,
-                                profile pages with profile picture & cover photo uploads, follwing & followers support, 
+                            <p class='fn1'>Created a social network site just like Twitter using Node.Js
+                            </p>
+                            <p class='fn2'>Complete with features of tweets / likes / comments / retweets /pin, 
+                                profile pages with profile picture & cover photo uploads, following & followers support, 
                                 instant messaging and notifications in real time, and group chat support etc;
                             </p>
-                            <p class='fn2'>These features were implemented by RESTful APIs built in Node.js, Mongoose models created for CRUD operations with MongoDB databse,
-                                user interactive web pages utilizing Pug templates & Javascript/Jquery, and realtime application framework socket.io (JS Library)
-                            </p>
-                            <p class='fn3'>These features were implemented by RESTful APIs built in Node.js, Mongoose models created for CRUD operations with MongoDB databse,
-                                user interactive web pages utilizing Pug templates & Javascript/Jquery, and realtime application framework socket.io (JS Library)
-                            </p>
+                            <p class='fn3'>These features were implemented by utilizing Node/Express, MongoDB databse via Mongoose, 
+                                pug templates & Javascript/Jquery, and socket.io</p>
                         </div>
                     </div>
                 </div>

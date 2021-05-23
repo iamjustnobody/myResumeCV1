@@ -162,13 +162,14 @@ body::after{
     content: '';
     width: 100%;
     height: 100%;
-    background: inherit;
+    /*min-height: 100vh;opt*/
+    background:inherit;
     position: absolute;
     top: 0;
     left: 0;
     filter: blur(20rem);
     z-index: -11;
-    transform: scale(1.15);
+    /*transform: scale(1.15);*/
 } /*for wallpaper*/
 .container{ /*border:2px solid green;*/
     display: flex;
@@ -331,18 +332,18 @@ body::after{
     /*height: auto; or specific val*/
     /*display: flex; justify-content: flex-start;width: 100%;*/
     display: grid;
-    grid-template-columns: 30px 1fr;
+    grid-template-columns: 36px 1fr;
 }
 .left-panel .contact-info span{
     /*border:1px solid red*/
 }
-.left-panel .contact-info ul li .icon{ border:2px solid green;
+.left-panel .contact-info ul li .icon{ /*border:2px solid green;!*/
     display: inline-block;
-    width: 30px;
+    width: 36px;
     font-size: 18px;
     color:#03a9f4;
     /*height: 100%*/
-    
+    /*margin-right: 2px; but fixed grid 36px*/
 }
 .left-panel .contact-info.social ul li .icon{width: 70px;}
 .left-panel .contact-info.social ul li{grid-template-columns: 70px 1fr;}
@@ -350,17 +351,62 @@ body::after{
 
 .left-panel .contact-info ul li span{
     font-weight: 300;
-    height:30px
+    height:36px 
 }
-.left-panel .contact-info ul li .text{ border:2px solid green;
+.left-panel .contact-info ul li .text{ /*border:2px solid green;!*/
     /*height: 150px;*/
-    width: calc(100%-30px);
+    width: calc(100%-36px);
     /*text-transform: lowercase;*/
-    color:#f0f0f0
+    color:#f0f0f0;
+    margin-left:2px;
+    padding-left:5px;
 }
 .left-panel .contact-info ul li .text.lower{
     text-transform: lowercase;
 }
+.left-panel .contact-info.contact ul li .text{display: flex;align-items: center;/*padding-left or margin-left:2+5px*/}
+
+.left-panel .contact-info.contact ul li .icon{ /*above 40px*40px*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    margin-right:10px;/*no visible effect (as grid 70px fixed?); NOT margin:0 10px as pushed to right (overlap txt);*/
+    text-decoration: none;
+    font-size:normal;
+    border-radius: 50%;
+    color:#e2e2e2;
+    box-shadow: inset -1px -1px 2px rgba(0,0,0,.2),
+    2px 2px 5px rgba(0,0,0,.2);
+    transition: .5s;
+    position: relative;
+}
+.left-panel .contact-info.contact ul li .icon:hover{
+    color:#999;
+    transform:translateY(-10px); /*above ul li margin:10px 0; title margin-bottom:20px*/
+    box-shadow: inset -1px -1px 2px rgba(0,0,0,.2),
+    2px 24px 10px rgba(0,0,0,.1);
+}
+.left-panel .contact-info.contact ul li .icon:before{
+    content:'';
+    position: absolute;
+    top:2.7px;
+    left:2.7px;
+    right: 2.7px;
+    bottom: 2.7px;
+    border-radius: 50%;
+    border:2px solid rgba(0,0,0,.1);
+    background: coral;
+    background: #003147;
+}
+.left-panel .contact-info.contact ul li .icon i{
+    color:#fff;
+    position:relative;
+    z-index:1;
+    /*either relative pos or +ve z-index*/
+}
+
+
 
 
 .left-panel .contact-info.education li{
@@ -642,7 +688,7 @@ body::after{
     margin-bottom: 5px;
 }
 .right-dashboard .about .opex-box .text p{ /*border:2px solid red;*/
-    font-size: 13.5px;
+    font-size: 13px;
 }
 
 .right-dashboard .skills .opex-box{
@@ -684,11 +730,56 @@ body::after{
 }
 .right-dashboard .about .opex-box2 .project-name{
     margin-bottom: 12px;
-    color:#2a7da2;
+    /*color:#2a7da2;*/
+
+    display: flex;
 }
 .right-dashboard .about .opex-box2.last{/*border:2px solid yellowgreen;*/
     margin: 20px 0;
 }
+.right-dashboard .about .opex-box2 .project-name h4{/*border:2px solid red;*/
+    color:#2a7da2;padding: 3px;}
+.right-dashboard .about .opex-box2 .project-name h4:hover{
+    background: #03e9f4;
+    color:#003147;/*#050801*/
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+    cursor:pointer;
+}
+.right-dashboard .about .opex-box2 .project-name a{
+    margin-left:10px;
+    display: flex;
+    background: #e3edf7;
+    height:30px;
+    width: 30px;
+    border: 8px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border:1px solid rgba(0,0,0,0);
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,.15),-6px -6px 10px -1px rgba(255,255,255,.7);
+    box-shadow: 3px 3px 5px -1px rgba(0,0,0,.15),-3px -3px 5px -1px rgba(255,255,255,.7);
+    transition: transform .5s;
+}
+.right-dashboard .about .opex-box2 .project-name a i{
+    font-size:20px;
+    color:#777;
+    transition: transform .5s;
+}
+.right-dashboard .about .opex-box2 .project-name a:hover{
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,.2),
+    inset -4px -4px 6px -1px rgba(255,255,255,.7),
+    -.5px -.5px 0 rgba(255,255,255,1),
+    .5px .5px 0 rgba(0,0,0,.15),
+    0 12px 10px rgba(0,0,0,.05);
+    border:1px solid rgba(0,0,0,.01);
+    transform:translateY(2px)
+    
+}
+.right-dashboard .about .opex-box2 .project-name a:hover i{
+    transform:scale(0.90);
+    color:black
+}
+
 .right-dashboard .about .opex-box2 .text p{
     position: relative;
     margin-bottom: 8px;
@@ -723,7 +814,7 @@ body::after{
         grid-template-columns: repeat(1,1fr);
     }
     .left-panel .contact-info ul li{
-        grid-template-columns: 30px 240px;
+        grid-template-columns: 36px 250px;
     } /*applies to contact; social still using non-media display grid 70px 1fr*/
     .left-panel .contact-info.social ul li{
         grid-template-columns: 70px 320px;
@@ -789,4 +880,14 @@ body::after{
     .container .resume .left-panel,.container .resume .right-dashboard{padding:1px}
     #email{width: 240px;}
     #address{width: 230px;}
+}
+/*fixed width then margin/padding left=right (auto) or display flex to centralize -> central position in case of hover; 
+/*but align left/flex-start so need to make width narrow; also for @media*/
+
+
+audio{
+    position: fixed;
+    bottom:0;
+    right:0;
+    z-index:1;
 }
